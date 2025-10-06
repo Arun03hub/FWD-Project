@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Study Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Smart Study Planner</h1>
+    <nav>
+      <button id="nav-tasks">Tasks</button>
+      <button id="nav-add">Add</button>
+      <button id="nav-progress">Progress</button>
+      <button id="nav-timetable">Timetable</button>
+      <button class="hamburger" id="hamburger-menu" aria-label="Menu">☰</button>
+      <div class="mobile-menu" id="mobile-menu" style="display:none;">
+        <button id="mobile-tasks">Tasks</button>
+        <button id="mobile-add">Add</button>
+        <button id="mobile-progress">Progress</button>
+        <button id="mobile-timetable">Timetable</button>
+      </div>
+    </nav>
+  </header>
+  <div id="space"></div>
+  <div id="welcome-msg">Welcome to your Smart Study Planner!<br><br>Organize and track your study goals visually & efficiently.</div>
+  <main id="main-section" class="section active">
+    <div class="quotes-slider" aria-label="Inspirational quotes slider">
+      <button class="nav-arrow prev-arrow" aria-label="Previous quote">&#10094;</button>
+      <div class="slides-container" id="slides-container">
+        <div class="slide"><img src="quote1.png" alt="Inspirational Quote 1" /></div>
+        <div class="slide"><img src="quote2.png" alt="Inspirational Quote 2" /></div>
+        <div class="slide"><img src="quote3.png" alt="Inspirational Quote 3" /></div>
+        <div class="slide"><img src="quote4.png" alt="Inspirational Quote 4" /></div>
+        <div class="slide"><img src="quote5.png" alt="Inspirational Quote 5" /></div>
+      </div>
+      <button class="nav-arrow next-arrow" aria-label="Next quote">&#10095;</button>
+    </div>
+    <div id="tasks-list-inside-main"></div>
+  </main>
+  <section id="form-section" class="section">
+    <h2 id="form-title">Add New Task</h2>
+    <form id="task-form">
+      <label for="title">Task Title *</label>
+      <input type="text" id="title" placeholder="e.g. Learn Algorithms" required />
+      <label for="description">Description</label>
+      <textarea id="description" rows="3" placeholder="Task details or notes"></textarea>
+      <label for="startDate">Start Date *</label>
+      <input type="date" id="startDate" required />
+      <label for="dueDate">Due Date *</label>
+      <input type="date" id="dueDate" required />
+      <label for="hoursSpent">Total Hours to Complete *</label>
+      <input type="number" id="hoursSpent" min="1" step="0.5" required placeholder="e.g. 10" />
+      <label for="numTopics">Number of Topics (optional)</label>
+      <input type="number" id="numTopics" min="0" max="20" placeholder="How many topics?" />
+      <div id="topics-container"></div>
+      <label for="priority">Priority</label>
+      <select id="priority">
+        <option value="Low">Low</option>
+        <option value="Normal" selected>Normal</option>
+        <option value="High">High</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+  </section>
+  <section id="progress-section" class="section">
+    <h2>Progress Overview</h2>
+    <div class="progress-u-shape-container">
+      <svg viewBox="0 0 200 100" class="progress-arc-svg">
+        <path d="M 10 100 A 90 90 0 0 1 190 100" stroke="#eee" stroke-width="18" fill="none"/>
+        <path id="progress-arc" d="M 10 100 A 90 90 0 0 1 190 100" stroke="#0984e3" stroke-width="18" fill="none" stroke-dasharray="282.6" stroke-dashoffset="282.6"/>
+      </svg>
+      <div class="progress-u-percent" id="progress-u-percent">0%</div>
+      <div class="progress-chips">
+        <span class="chip">All: <b id="all-count">0</b></span>
+        <span class="chip">Completed: <b id="completed-count">0</b></span>
+        <span class="chip">Pending: <b id="pending-count">0</b></span>
+      </div>
+    </div>
+    <ul id="progress-task-list"></ul>
+  </section>
+  <section id="timetable-section" class="section">
+    <h2>Your Personalized Study Timetable</h2>
+    <table id="timetable" aria-label="Study Timetable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Tasks Scheduled</th>
+          <th>Hours</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
