@@ -7,9 +7,9 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
  background-image: url(backg1.jpg);
- background-size: cover;          /* Cover entire viewport */
-  background-position: center;     /* Center the image */
-  background-repeat: no-repeat;    /* Prevent tiling */
+ background-size: cover;          
+  background-position: center;     
+  background-repeat: no-repeat;   
   background-attachment: fixed;
 color: #2d3436;
 }
@@ -624,3 +624,4 @@ button[type="submit"]:hover {
 #space {
   height: 80px;
 }
+
